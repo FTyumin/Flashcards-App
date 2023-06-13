@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from './axios';
 import { getRefreshToken, isAccessTokenExpired, setAuthUser } from './auth';
 import { API_BASE_URL } from './constants';
 import Cookies from 'js-cookie';
