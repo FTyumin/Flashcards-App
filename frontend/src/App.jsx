@@ -12,6 +12,7 @@ function App() {
     return (
         <BrowserRouter>
             <MainWrapper>
+                <h1>ALLLLLo</h1>
                 <Routes>
                     <Route
                         path="/private"

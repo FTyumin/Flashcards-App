@@ -13,7 +13,7 @@ const Home = () => {
     );
 };
 
-const LoggedInView = ({ user }) => {
+const LoggedInView = ({user}) => {
     return (
         <div>
             <h1>Welcome {user.username}</h1>
