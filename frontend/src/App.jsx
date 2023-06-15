@@ -10,25 +10,12 @@ import Register from './views/register';
 
 function App() {
     return (
-        <BrowserRouter>
-            <MainWrapper>
-                <h1>ALLLLLo</h1>
-                <Routes>
-                    <Route
-                        path="/private"
-                        element={
-                            <PrivateRoute>
-                                <Private />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/logout" element={<Logout />} />
-                </Routes>
-            </MainWrapper>
-        </BrowserRouter>
+        <>
+        <h1>
+            HELLLOOOO
+        </h1>
+            
+        </>
     );
 }
 
