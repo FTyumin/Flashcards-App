@@ -44,32 +44,8 @@ const Login = () => {
         }
     };
     return (
-        // <section>
-        //     <h1>Login</h1>
-        //     <Form onSubmit={handleLogin}>
-        //         <div>
-        //             <label htmlFor="username">Username</label>
-        //             <input
-        //                 type="text"
-        //                 id="username"
-        //                 name="username"
-        //                 value={username}
-        //                 onChange={(e) => setUsername(e.target.value)}
-        //             />
-        //         </div>
-        //         <div>
-        //             <label htmlFor="password">Password</label>
-        //             <input
-        //                 type="password"
-        //                 id="password"
-        //                 name="password"
-        //                 value={password}
-        //                 onChange={(e) => setPassword(e.target.value)}
-        //             />
-        //         </div>
-        //         <Button type="submit" variant="primary">Login</Button>
-        //     </Form>
-        // </section>
+       
+        
         <Container size={420} my={40}>
             <Title 
                 align="center"
@@ -120,7 +96,7 @@ const Login = () => {
                 Forgot password?
             </Anchor>
             </Group>
-            <Button fullWidth mt="xl" type="submit">
+            <Button fullWidth mt="xl" type="submit" onClick={handleLogin}>
             Sign in
             </Button>
         </Paper>
