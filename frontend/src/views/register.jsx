@@ -2,6 +2,18 @@ import { useEffect, useState } from 'react';
 import { register } from '../utils/auth';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
+import {
+    TextInput,
+    PasswordInput,
+    Checkbox,
+    Anchor,
+    Paper,
+    Title,
+    Text,
+    Container,
+    Group,
+    Button,
+  } from "@mantine/core";
 
 function Register() {
     const [username, setUsername] = useState('');
@@ -34,46 +46,58 @@ function Register() {
     };
 
     return (
-        <section>
-            <form onSubmit={handleSubmit}>
-                <h1>Register</h1>
-                <hr />
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="Username"
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                        required
-                    />
-                </div>
-                <div>
-                    <label htmlFor="confirm-password">Confirm Password</label>
-                    <input
-                        type="password"
-                        id="confirm-password"
-                        onChange={(e) => setPassword2(e.target.value)}
-                        placeholder="Confirm Password"
-                        required
-                    />
-                    <p>
-                        {password2 !== password ? 'Passwords do not match' : ''}
-                    </p>
-                </div>
-                <button type="submit">Register</button>
-            </form>
-        </section>
+        <Container size="xl" px={0}>
+            <Title 
+                align="center"
+                sx={(theme) => ({
+                    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+                    fontWeight: 900,
+                })}
+                >Register
+            </Title>
+            <Text color="dimmed" size="sm" align="center" mt={5}>
+                have an account ?{" "}
+                    <Anchor
+                    href="#"
+                    size="sm"
+                    onClick={(event) => event.preventDefault()}
+                    >
+                        Login
+                    </Anchor>
+            </Text>
+            <Paper withBorder shadow="md" p={60} mt={30} radius="md">
+            <TextInput 
+                label="Username" 
+                placeholder="username" 
+                required 
+                id="username" 
+                name="username" 
+                value={username}
+                onChange={(e) => setUsername(e.target.value)} />
+
+            <PasswordInput
+                label="Password"
+                placeholder="Your password"
+                required
+                mt="md"
+                id="password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+            />
+            <PasswordInput
+            label="Password"
+            placeholder="Your password"
+            required
+            mt="md"
+            id="confirm-password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword2(e.target.value)}
+            />
+    </Paper>
+        </Container>
+                   
     );
 }
 
