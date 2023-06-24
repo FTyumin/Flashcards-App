@@ -44,9 +44,13 @@ function Register() {
             resetForm();
         }
     };
+    const LoginButton = () => {
+        navigate('/login')
+    }
+
 
     return (
-        <Container size="xl" px={0}>
+        <Container size={420} my={40}>
             <Title 
                 align="center"
                 sx={(theme) => ({
@@ -55,36 +59,38 @@ function Register() {
                 })}
                 >Register
             </Title>
+
             <Text color="dimmed" size="sm" align="center" mt={5}>
-                have an account ?{" "}
+                Have an account already?{" "}
                     <Anchor
-                    href="#"
+                    href="/login"
                     size="sm"
-                    onClick={(event) => event.preventDefault()}
+                    onClick={LoginButton}
                     >
                         Login
                     </Anchor>
             </Text>
-            <Paper withBorder shadow="md" p={60} mt={30} radius="md">
+                <Paper withBorder shadow="md" p={60} mt={30} radius="md">
             <TextInput 
-                label="Username" 
-                placeholder="username" 
-                required 
-                id="username" 
-                name="username" 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)} />
+            label="Username" 
+            placeholder="username" 
+            required 
+            id="username" 
+            name="username" 
+            value={username}
+            onChange={(e) => setUsername(e.target.value)} />
 
             <PasswordInput
-                label="Password"
-                placeholder="Your password"
-                required
-                mt="md"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+            label="Password"
+            placeholder="Your password"
+            required
+            mt="md"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             />
+
             <PasswordInput
             label="Password"
             placeholder="Your password"
@@ -92,12 +98,29 @@ function Register() {
             mt="md"
             id="confirm-password"
             name="password"
-            value={password}
+            value={password2}
             onChange={(e) => setPassword2(e.target.value)}
             />
-    </Paper>
+            <Group position="apart" mt="lg">
+            <Checkbox label="Remember me" sx={{ lineHeight: 1 }} />
+            <Anchor
+                onClick={(event) => event.preventDefault()}
+                href="#"
+                size="sm"
+            >
+                Forgot password?
+            </Anchor>
+            </Group>
+            <Button fullWidth mt="xl" type="submit" onClick={handleSubmit}>
+            Register
+            </Button>
+        </Paper>
+       
         </Container>
-                   
+       
+              
+            
+           
     );
 }
 

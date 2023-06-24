@@ -43,6 +43,11 @@ const Login = () => {
             resetForm();
         }
     };
+
+    const RegisterButton = () => {
+        navigate('/register')
+    }
+
     return (
        
         
@@ -61,7 +66,7 @@ const Login = () => {
                     <Anchor
                     href="#"
                     size="sm"
-                    onClick={(event) => event.preventDefault()}
+                    onClick={RegisterButton}
                     >
                         Create account
                     </Anchor>
