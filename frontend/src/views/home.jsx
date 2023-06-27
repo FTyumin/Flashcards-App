@@ -18,9 +18,9 @@ const Home = () => {
 const LoggedInView = ({ user }) => {
     return (
         <div>
-        <SimpleNavbar classname="navbar"/>
+        
             <h1>Welcome {user.username}</h1>
-            <Link to="/private">
+            <Link to="/flashcards">
                 <button>Private</button>
             </Link>
             <Link to="/logout">
@@ -33,7 +33,6 @@ const LoggedInView = ({ user }) => {
 export const LoggedOutView = ({ title = 'Home' }) => {
     return (
         <div>
-            <SimpleNavbar/>
             <h1>{title}</h1>
             <Link to="/login">
                 <button>Login</button>

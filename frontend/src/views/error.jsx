@@ -6,7 +6,7 @@ import {
     Container,
     Group,
   } from "@mantine/core";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const useStyles = createStyles((theme) => ({
@@ -67,9 +67,11 @@ const useStyles = createStyles((theme) => ({
               address, or the page has been moved to another URL.
             </Text>
             <Group position="center">
-              <Button variant="subtle" size="md">
-                Take me back to home page
-              </Button>
+              <Link to="/">
+                <Button variant="subtle" size="md">
+                  Take me back to home page
+                </Button>
+              </Link>
             </Group>
           </Container>
         );
