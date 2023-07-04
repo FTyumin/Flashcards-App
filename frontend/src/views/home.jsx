@@ -23,6 +23,7 @@ const LoggedInView = ({ user }) => {
             <Link to="/flashcards">
                 <button>Private</button>
             </Link>
+            
             <Link to="/logout">
                 <button>Logout</button>
             </Link>
