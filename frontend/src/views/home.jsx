@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
-import { SimpleNavbar } from "../components/NavBar";
+import Navbar from '../components/NavBar';
 import '../App.css'
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
 const LoggedInView = ({ user }) => {
     return (
         <div>
-        
+            <Navbar/>
             <h1>Welcome {user.username}</h1>
             <Link to="/flashcards">
                 <button>Private</button>
