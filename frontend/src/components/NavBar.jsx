@@ -28,9 +28,7 @@ import "../css/NavBar.css"
     const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
   
-    const onButtonClick = () => {
-      window.open(Shubham_Verma_Resume);
-    };
+    
   
     return (
       <div id="navFix">
@@ -175,25 +173,17 @@ import "../css/NavBar.css"
                   variant="solid"
                   onClick={onButtonClick}
                   size={["sm", "md"]}
-                  download="Shubham_Verma_Resume"
+                  
                   id="resumeBtn"
                 >
                   <a
-                    href={Shubham_Verma_Resume}
+                    
                     target="_blank"
-                    download="Shubham_Verma_Resume"
+                    
                   >
                     RESUME
                   </a>
-                  {/* <Link
-                      id="navRes"
-                      href={Shubham_Verma_Resume}
-                      target="_blank"
-                      style={{ textDecoration: "none", color: "white" }}
-                      download="Shubham_Verma_Resume"
-                    >
-                      RESUME
-                    </Link> */}
+                  
                 </Button>
               </Stack>
             </Flex>
