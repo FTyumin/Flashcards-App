@@ -8,28 +8,30 @@ import Logout from './views/logout';
 import Private from './views/private';
 import Register from './views/register';
 import NotFoundTitle from './views/error';
+import Navbar from './components/NavBar';
 
 
 function App() {
     return (
         <BrowserRouter>
             <MainWrapper>
-                <Routes>
-                    <Route
-                        path="/private"
-                        element={
-                            <PrivateRoute>
-                                <Private />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/logout" element={<Logout />} />
-              
-                    <Route path='*' element={<NotFoundTitle />}/>
-                </Routes>
+                <Navbar/>
+                    <Routes>
+                        <Route
+                            path="/private"
+                            element={
+                                <PrivateRoute>
+                                    <Private />
+                                </PrivateRoute>
+                            }
+                        />
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
+                
+                        <Route path='*' element={<NotFoundTitle />}/>
+                    </Routes>
             </MainWrapper>
         </BrowserRouter>
     );
