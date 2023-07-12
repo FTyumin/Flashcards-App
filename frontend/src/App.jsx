@@ -15,7 +15,7 @@ function App() {
     return (
         <BrowserRouter>
             <MainWrapper>
-                <Navbar/>
+                {/* <Navbar/> */}
                     <Routes>
                         <Route
                             path="/private"

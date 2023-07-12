@@ -52,7 +52,7 @@ const Login = () => {
     return (
        
         <>
-        <Navbar/>
+        
         <Container size={420} my={40}>
             <Title 
                 align="center"

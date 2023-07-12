@@ -92,7 +92,7 @@ function Register() {
             />
 
             <PasswordInput
-            label="Password"
+            label="Repeat Password"
             placeholder="Your password"
             required
             mt="md"
