@@ -23,9 +23,16 @@ function getStorageFlashcards() {
 }
 
 export function useFlashcards() {
-    const [flashCards] = useState(getStorageFlashcards);
+    const [flashCards, setFlashCards] = useState(getStorageFlashcards);
 
     useEffect(() => localStorage.setItem(FLASHCARDS_KEY, JSON.stringify(flashCards)), [flashCards]);
 
-    return [flashCards];
+    const addFlashCard = (front,back) => {
+        const newFlashCard = {
+            id:Date.now(),front,back
+        }
+        setFlashCards((prevFlashCards) => [...prevFlashCards, newFlashCard])
+    }
+
+    return [flashCards, addFlashCard];
 }
