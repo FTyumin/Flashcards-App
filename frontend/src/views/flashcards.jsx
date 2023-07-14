@@ -39,8 +39,8 @@ function Flashcards() {
     <Container className="container-main">
       <Card {...allCards.find(item=> item.id === curCardId)}></Card>
       <div className="action-buttons">
-        <Button variant="warning" className="me-4 prev-next-btns" onClick={goToPrev}>Prev</Button>
-        <Button variant="success" className="ms-4 prev-next-btns" onClick={goToNext}>Next</Button>
+        <Button  className="me-4 prev-next-btns" onClick={goToPrev}>Prev</Button>
+        <Button variant='success' className="ms-4 prev-next-btns" onClick={goToNext}>Next</Button>
       </div>
     </Container>
     </>
