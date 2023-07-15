@@ -42,6 +42,7 @@ function Flashcards() {
         <Button  className="me-4 prev-next-btns" onClick={goToPrev}>Prev</Button>
         <Button variant='success' className="ms-4 prev-next-btns" onClick={goToNext}>Next</Button>
       </div>
+      
     </Container>
     </>
   );
