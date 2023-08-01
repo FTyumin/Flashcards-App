@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
-import Navbar from '../components/NavBar';
+
 import '../App.css'
 
 const Home = () => {

@@ -7,7 +7,7 @@ function NewFlashcard() {
 
     const handleAddFlashcard = () => {
         const front = prompt("Enter the front:")
-        const back = prompt("Ener the back")
+        const back = prompt("Enter the back")
         if(front && back){
             AddFlashcard(front,back)
         }

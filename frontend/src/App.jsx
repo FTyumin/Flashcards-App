@@ -8,7 +8,7 @@ import Logout from './views/logout';
 import Private from './views/private';
 import Register from './views/register';
 import NotFoundTitle from './views/error';
-import Navbar from './components/NavBar';
+// import Navbar from './components/NavBar';
 import Flashcards from './views/flashcards';
 import NewFlashcard from './views/newCards';
 
