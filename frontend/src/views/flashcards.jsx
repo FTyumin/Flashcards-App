@@ -38,6 +38,7 @@ function Flash() {
       <div className="button-container">
         <button onClick={handleShowAnswer}>Show Answer</button>
         <button onClick={handleNextCard}>Next Card</button>
+        <button>Add Card</button>
       </div>
     </div>
   );
