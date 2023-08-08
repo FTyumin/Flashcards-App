@@ -9,6 +9,7 @@ import Private from './views/private';
 import Register from './views/register';
 import NotFoundTitle from './views/error';
 import NewFlashcard from './views/newCards';
+import Flash from './views/flashcards';
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
-                       
+                        <Route path='/safe' element= {<Flash/>}/>
                         <Route path="/newcard" element = {<NewFlashcard/>}/>
                         <Route path='*' element={<NotFoundTitle />}/>
                     </Routes>
