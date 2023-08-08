@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import status
+from rest_framework import status, generics
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.http import JsonResponse
@@ -10,6 +10,8 @@ from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes
 import json
+from .models import Flashcard
+from .serializer import FlashcardSerializer
 
 # Create your views here.
 
@@ -53,3 +55,7 @@ def testEndPoint(request):
         except json.JSONDecodeError:
             return Response("Invalid JSON data", status.HTTP_400_BAD_REQUEST)
     return Response("Invalid JSON data", status.HTTP_400_BAD_REQUEST)
+
+class FlashcardListCreateView(generics.ListCreateAPIView):
+    queryset = Flashcard.objects.all()
+    serializer_class = FlashcardSerializer
