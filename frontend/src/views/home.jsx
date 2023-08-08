@@ -20,13 +20,7 @@ const LoggedInView = ({ user }) => {
         <div>
             
             <h1>Welcome, {user.username}</h1>
-            <Link to="/flashcards">
-                <button>Flashcards</button>
-            </Link>
-
-            <Link to="/newcard">
-                <button>Flashcards</button>
-            </Link>
+           
             
             <Link to="/logout">
                 <button>Logout</button>

@@ -8,8 +8,6 @@ import Logout from './views/logout';
 import Private from './views/private';
 import Register from './views/register';
 import NotFoundTitle from './views/error';
-// import Navbar from './components/NavBar';
-import Flashcards from './views/flashcards';
 import NewFlashcard from './views/newCards';
 
 
@@ -31,7 +29,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
-                        <Route path="/flashcards" element={<Flashcards/>}/>
+                       
                         <Route path="/newcard" element = {<NewFlashcard/>}/>
                         <Route path='*' element={<NotFoundTitle />}/>
                     </Routes>
