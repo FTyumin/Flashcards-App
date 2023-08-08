@@ -4,7 +4,7 @@ import '../css/flashcard.css';
 const data = [
   { question: 'What is the capital of France?', answer: 'Paris' },
   { question: 'What is 2 + 2?', answer: '4' },
-  // Add more flashcards here
+  
 ];
 
 function Flash() {

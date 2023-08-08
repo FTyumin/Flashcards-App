@@ -1,25 +1,25 @@
-import { useFlashcards } from "../hooks/useFlashcards";
+import {Input} from '@chakra-ui/react'
+import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Stack, HStack, VStack } from '@chakra-ui/react'
 
-
-
-function NewFlashcard() {
-    const[flashcards, AddFlashcard] = useFlashcards()
-
-    const handleAddFlashcard = () => {
-        const front = prompt("Enter the front:")
-        const back = prompt("Enter the back")
-        if(front && back){
-            AddFlashcard(front,back)
-        }
-            
-    }
+function AddCard(){
     return(
-    <div>
-        <button onClick={handleAddFlashcard}>Add Flashcard</button>
-    </div>
+        <>
+            <VStack
+             spacing={20}
+             align='stretch'
+             >
+
+            
+                <h1>Add Card</h1>
+                <Input placeholder='Front of flashcard' size='lg' fontSize='2em'></Input>
+                <Input placeholder='Back of flashcard' size='lg' fontSize='2em'></Input>
+
+                <Button colorScheme='yelow'>Safe</Button>
+            </VStack>
+
+        </>
     )
 }
 
-
-
-export default NewFlashcard;
+export default AddCard;

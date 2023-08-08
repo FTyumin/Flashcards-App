@@ -8,15 +8,14 @@ import Logout from './views/logout';
 import Private from './views/private';
 import Register from './views/register';
 import NotFoundTitle from './views/error';
-import NewFlashcard from './views/newCards';
 import Flash from './views/flashcards';
+import AddCard from './views/newCards';
 
 
 function App() {
     return (
         <BrowserRouter>
             <MainWrapper>
-                {/* <Navbar/> */}
                     <Routes>
                         <Route
                             path="/private"
@@ -31,7 +30,7 @@ function App() {
                         <Route path="/register" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
                         <Route path='/safe' element= {<Flash/>}/>
-                        <Route path="/newcard" element = {<NewFlashcard/>}/>
+                        <Route path='/cheel' element= {<AddCard/>}/>
                         <Route path='*' element={<NotFoundTitle />}/>
                     </Routes>
             </MainWrapper>
