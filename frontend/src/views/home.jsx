@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
+import AddCard from './newCards';
+import FlashcardList from './flashcardlist';
+
 
 import '../App.css'
 
@@ -8,6 +11,7 @@ const Home = () => {
         state.isLoggedIn,
         state.user,
     ]);
+
     return (
         <div>
             {isLoggedIn() ? <LoggedInView user={user()} /> : <LoggedOutView />}
@@ -20,7 +24,7 @@ const LoggedInView = ({ user }) => {
         <div>
             
             <h1>Welcome, {user.username}</h1>
-           
+            
             
             <Link to="/logout">
                 <button>Logout</button>
