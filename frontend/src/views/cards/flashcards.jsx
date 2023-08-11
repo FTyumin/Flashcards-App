@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/flashcard.css';
+import '../../css/flashcard.css'
 
 const data = [
   { question: 'What is the capital of France?', answer: 'Paris' },
