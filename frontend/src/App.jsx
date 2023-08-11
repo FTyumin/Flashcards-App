@@ -2,15 +2,15 @@ import './App.css';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Home from './views/home';
 import MainWrapper from './layouts/MainWrapper';
-import Login from './views/login';
+import Login from './views/auth/login';
 import PrivateRoute from './layouts/PrivateRoute';
-import Logout from './views/logout';
+import Logout from './views/auth/logout';
 import Private from './views/private';
-import Register from './views/register';
+import Register from './views/auth/register';
 import NotFoundTitle from './views/error';
-import Flash from './views/flashcards';
-import AddCard from './views/newCards';
-import Test from './views/test';
+import Flash from './views/cards/flashcards';
+import AddCard from './views/cards/newCards';
+import Test from './views/cards/test';
 
 
 function App() {

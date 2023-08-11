@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { LoggedOutView } from './home';
-import { logout } from '../utils/auth';
+import { LoggedOutView } from '../home';
+import { logout } from '../../utils/auth';
 
 const Logout = () => {
     useEffect(() => {
