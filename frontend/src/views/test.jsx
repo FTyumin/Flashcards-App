@@ -11,7 +11,7 @@ function Test() {
 
   const fetchFlashcards = async () => {
     try {
-      const response = await axios.get('/app/flashcards/');
+      const response = await axios.get('http://127.0.0.1:8000/app/flashcards/');
       setFlashcards(response.data);
     } catch (error) {
       console.error('Error fetching flashcards:', error);
@@ -24,7 +24,7 @@ function Test() {
 
   const handleAddFlashcard = async (newFlashcard) => {
     try {
-      const response = await axios.post('/app/flashcards/', newFlashcard);
+      const response = await axios.post('http://127.0.0.1:8000/app/flashcards/', newFlashcard);
       setFlashcards([...flashcards, response.data]);
     } catch (error) {
       console.error('Error adding flashcard:', error);

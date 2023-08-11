@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import { Stack, HStack, VStack } from '@chakra-ui/react'
 import { useState } from 'react'
 
-function AddCard(){
+function AddCard({ onAdd }){
     const [question, setQuestion] = useState('')
     const [answer, setAnswer] = useState('')
 
