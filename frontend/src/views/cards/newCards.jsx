@@ -16,20 +16,34 @@ function AddCard({ onAdd }){
 
     return(
         <>
-            <VStack
-             spacing={20}
-             align='stretch'
-             >
-
+            <Stack spacing={3} align='center'>
                 <form onSubmit={handleSubmit}>
                     <h1>Add Card</h1>
-                    <Input placeholder='Front of flashcard' size='lg' fontSize='2em' id="question" value={question} onChange={(e) => setQuestion(e.target.value)}></Input>
-                    <Input placeholder='Back of flashcard' size='lg' fontSize='2em' id="answer" value={answer} onChange={(e) => setAnswer(e.target.value)}></Input>
-
-                    <Button colorScheme='yelow' type='submit'>Safe</Button>
+                    <Stack spacing={3} align='stretch'>
+                        <Input
+                            placeholder='Front of flashcard'
+                            size='lg'
+                            fontSize='2em'
+                            id='question'
+                            value={question}
+                            onChange={(e) => setQuestion(e.target.value)}
+                        />
+                        <Input
+                            placeholder='Back of flashcard'
+                            size='lg'
+                            fontSize='2em'
+                            id='answer'
+                            value={answer}
+                            onChange={(e) => setAnswer(e.target.value)}
+                        />
+                    </Stack>
+                    <Button colorScheme='yellow' type='submit'>
+                        Save
+                    </Button>
                 </form>
-                    
-            </VStack>
+            </Stack>
+
+            
 
         </>
     )

@@ -1,23 +1,42 @@
+import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider, Text } from '@chakra-ui/react';
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from '@chakra-ui/react'
 const FlashcardList = ({ flashcards }) => {
-    return (
-      <div>
-        <h2>Flashcards List</h2>
-        <ul>
-          {flashcards.map((flashcard) => (
-            <li key={flashcard.id}>
-              <strong>Question:</strong> {flashcard.question}, <strong>Answer:</strong> {flashcard.answer}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  };
-  
-export default FlashcardList;
+  return (
+    
 
-  
- 
-     
+    <TableContainer>
+      <Table variant="simple">
+      <TableCaption>Flashcarads</TableCaption>
+        <Thead>
+          <Tr>
+            <Th>Question</Th>
+            <Th>Answer</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+            {flashcards.map((flashcard) => (
+              <Tr key={flashcard.id}>
+                <Td>{flashcard.question}</Td>
+                <Td>{flashcard.answer}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+      </Table>
+    </TableContainer>
+  );
+};
+
+export default FlashcardList;
 
   
   
