@@ -40,6 +40,29 @@ function Flash() {
     navigate('/newcard')
   }
 
+  const deleteCard = () => {
+
+  }
+
+  handleDelete = (item) => {
+    alert("delete" + JSON.stringify(item));
+  };
+
+  refreshList = () => {
+    axios
+      .get("/app/flashcards/")
+      .then((res) => this.setState({ flashcards: res.data }))
+      .catch((err) => console.log(err));
+  };
+
+  handleDelete = (item) => {
+    axios
+      .delete(`/app/flashcards/${item.id}/`)
+      .then((res) => this.refreshList());
+  };
+
+
+
   return (
     <>
       <div className="flashcards-app">
@@ -68,6 +91,7 @@ function Flash() {
           <button onClick={handleShowAnswer}>Show Answer</button>
           <button onClick={handleNextCard}>Next Card</button>
           <button onClick={addCard}>Add Card</button>
+          <button >Delete Card</button>
         </div>
       </div>
     </>
