@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import '../../css/flashcard.css';
 import axios from 'axios'; 
 import { useEffect } from 'react';
+// import AddCard from './newCards';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 
@@ -9,8 +11,8 @@ import { useEffect } from 'react';
 function Flash() {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
-
   const [flashcards, setFlashcards] = useState([]);
+  const navigate = useNavigate();
 
   const fetchFlashcards = async () => {
     try {
@@ -34,27 +36,30 @@ function Flash() {
     fetchFlashcards();
   }, []);
 
+  const addCard = () => {
+    navigate('/newcard')
+  }
+
   return (
     <>
       <div className="flashcards-app">
         <h1>Flashcards App</h1>
         <div className="flashcard">
           <div className="flashcard-content">
-            {flashcards.map((flashcard) => (
-              <div key={flashcard.id}>
+              <div key={flashcards[currentCardIndex]?.id}>
                 <h3>Question:</h3>
-                <p>{flashcard.question}</p>
+                <p>{flashcards[currentCardIndex]?.question}</p>
               </div>
-            ))}
+           
           </div>
           {showAnswer &&
           (<div className="flashcard-content">
-            {flashcards.map((flashcard) => (
-              <div key={flashcard.id}>
+            
+              <div key={flashcards[currentCardIndex]?.id}>
                 <h3>Answer:</h3>
-                <p>{flashcard.answer}</p>
+                <p>{flashcards[currentCardIndex]?.answer}</p>
               </div>
-            ))}
+    
           </div>)}
           
 
@@ -62,7 +67,7 @@ function Flash() {
         <div className="button-container">
           <button onClick={handleShowAnswer}>Show Answer</button>
           <button onClick={handleNextCard}>Next Card</button>
-          <button>Add Card</button>
+          <button onClick={addCard}>Add Card</button>
         </div>
       </div>
     </>

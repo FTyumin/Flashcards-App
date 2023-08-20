@@ -1,12 +1,10 @@
-// src/App.js
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import AddCard from './newCards';
+import AddCard from './addCard';
 import FlashcardList from './flashcardlist';
 
-function Test() {
+function NewCard() {
   const [flashcards, setFlashcards] = useState([]);
 
   const fetchFlashcards = async () => {
@@ -40,4 +38,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default NewCard;

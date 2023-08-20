@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/auth';
-import AddCard from './cards/newCards';
+import AddCard from './cards/addCard';
 import FlashcardList from './cards/flashcardlist';
 
 
