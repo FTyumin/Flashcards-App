@@ -16,7 +16,7 @@ function Test() {
     } catch (error) {
       console.error('Error fetching flashcards:', error);
     }
-  };
+  }
 
   useEffect(() => {
     fetchFlashcards();
