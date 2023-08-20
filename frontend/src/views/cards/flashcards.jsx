@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import '../../css/flashcard.css'
+import '../../css/flashcard.css';
+import axios from 'axios'; 
+import { useEffect } from 'react';
 
-const data = [
-  { question: 'What is the capital of France?', answer: 'Paris' },
-  { question: 'What is 2 + 2?', answer: '4' },
-  
-]
+
 
 
 function Flash() {
@@ -25,12 +23,16 @@ function Flash() {
 
   const handleNextCard = () => {
     setShowAnswer(false);
-    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % data.length);
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % flashcards.length);
   };
 
   const handleShowAnswer = () => {
     setShowAnswer(true);
   };
+
+  useEffect(() => {
+    fetchFlashcards();
+  }, []);
 
   return (
     <>
@@ -45,15 +47,16 @@ function Flash() {
               </div>
             ))}
           </div>
-
-          <div className="flashcard-content">
+          {showAnswer &&
+          (<div className="flashcard-content">
             {flashcards.map((flashcard) => (
               <div key={flashcard.id}>
                 <h3>Answer:</h3>
                 <p>{flashcard.answer}</p>
               </div>
             ))}
-          </div>
+          </div>)}
+          
 
         </div>
         <div className="button-container">
