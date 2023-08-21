@@ -12,5 +12,6 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='auth_register'),
     path('test/', views.testEndPoint, name='test'),
     path('', views.getRoutes),
-    path('flashcards/', FlashcardListCreateView.as_view(), name='flashcard-list-create')
+    path('flashcards/', FlashcardListCreateView.as_view(), name='flashcard-list-create'),
+    path('flashcards/<int:flashcard_id>/', views.flashcard_detail, name='flashcard_detail'),
 ]

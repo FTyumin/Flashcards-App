@@ -12,6 +12,7 @@ from rest_framework.decorators import api_view, permission_classes
 import json
 from .models import Flashcard
 from .serializer import FlashcardSerializer
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
@@ -55,6 +56,16 @@ def testEndPoint(request):
         except json.JSONDecodeError:
             return Response("Invalid JSON data", status.HTTP_400_BAD_REQUEST)
     return Response("Invalid JSON data", status.HTTP_400_BAD_REQUEST)
+
+def flashcard_detail(request, flashcard_id):
+    flashcard = get_object_or_404(Flashcard, id=flashcard_id)
+    flashcard_data = {
+        'id': flashcard.id,
+        'question': flashcard.question,
+        'answer': flashcard.answer,
+        # Include other fields as needed
+    }
+    return JsonResponse(flashcard_data)
 
 class FlashcardListCreateView(generics.ListCreateAPIView):
     queryset = Flashcard.objects.all()

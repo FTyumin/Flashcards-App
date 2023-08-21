@@ -17,13 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
-from rest_framework import routers
-from app import views
 
-router = routers.DefaultRouter()
-router.register(r'flashcards',views.FlashcardListCreateView,'flashcard')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('app/', include(router.urls))
+    path('app/', include("app.urls"))
 ]
