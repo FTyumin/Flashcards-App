@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../../css/flashcard.css';
 import axios from 'axios'; 
 import { useEffect } from 'react';
-// import AddCard from './newCards';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 
@@ -40,24 +39,20 @@ function Flash() {
     navigate('/newcard')
   }
 
-  const deleteCard = () => {
+ 
 
-  }
+  
 
-  handleDelete = (item) => {
-    alert("delete" + JSON.stringify(item));
-  };
-
-  refreshList = () => {
+  const refreshList = () => {
     axios
-      .get("/app/flashcards/")
+      .get("http://localhost:8000/app/flashcards/")
       .then((res) => this.setState({ flashcards: res.data }))
       .catch((err) => console.log(err));
   };
 
-  handleDelete = (item) => {
+  const handleDelete = (item) => {
     axios
-      .delete(`/app/flashcards/${item.id}/`)
+      .delete("http://localhost:8000/app/flashcards/${flashcards[currentCardIndex]?.id}/")
       .then((res) => this.refreshList());
   };
 
@@ -91,7 +86,7 @@ function Flash() {
           <button onClick={handleShowAnswer}>Show Answer</button>
           <button onClick={handleNextCard}>Next Card</button>
           <button onClick={addCard}>Add Card</button>
-          <button >Delete Card</button>
+          <button onClick={handleDelete}>Delete Card</button>
         </div>
       </div>
     </>

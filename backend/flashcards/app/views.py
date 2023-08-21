@@ -63,7 +63,6 @@ def flashcard_detail(request, flashcard_id):
         'id': flashcard.id,
         'question': flashcard.question,
         'answer': flashcard.answer,
-        # Include other fields as needed
     }
     return JsonResponse(flashcard_data)
 
