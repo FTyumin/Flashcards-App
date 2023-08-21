@@ -51,6 +51,9 @@ const useStyles = createStyles((theme) => ({
       }));
       
       export default function NotFoundTitle() {
+
+        /*basic error page*/
+
         const { classes } = useStyles();
       
         return (

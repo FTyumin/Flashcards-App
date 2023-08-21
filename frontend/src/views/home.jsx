@@ -19,6 +19,9 @@ const Home = () => {
     );
 };
 
+
+/*What the logged in user sees
+Option to logout and go to cards page */
 const LoggedInView = ({ user }) => {
     return (
         <div>
@@ -37,6 +40,8 @@ const LoggedInView = ({ user }) => {
     );
 };
 
+
+/*What the not logged in user sees*/
 export const LoggedOutView = ({ title = 'Home' }) => {
     return (
         <div>

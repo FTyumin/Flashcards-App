@@ -31,15 +31,15 @@ function Flash() {
     setShowAnswer(true);
   };
 
-  useEffect(() => {
-    fetchFlashcards();
-  }, []);
+ 
 
   const addCard = () => {
     navigate('/newcard')
   }
 
- 
+  useEffect(() => {
+    fetchFlashcards();
+  }, []);
 
   
 
