@@ -29,6 +29,10 @@ const LoggedInView = ({ user }) => {
             <Link to="/logout">
                 <button>Logout</button>
             </Link>
+
+            <Link to="/safe">
+                <button>Cards</button>
+            </Link>
         </div>
     );
 };
