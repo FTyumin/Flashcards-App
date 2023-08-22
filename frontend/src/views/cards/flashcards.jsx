@@ -50,7 +50,7 @@ function Flash() {
       .catch((err) => console.log(err));
   };
 
-  const handleDelete = (item) => {
+  const handleDelete = (id) => {
     axios
       .delete(`http://localhost:8000/app/flashcards/${flashcards[currentCardIndex]?.id}/`)
       .then((res) => this.refreshList());
