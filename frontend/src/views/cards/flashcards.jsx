@@ -52,8 +52,12 @@ function Flash() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:8000/app/flashcards/${flashcards[currentCardIndex]?.id}/`)
-      .then((res) => this.refreshList());
+      .delete(`http://localhost:8000/app/flashcards/${id}/`)
+      .then((res) => {
+        // Refresh the flashcards list after deleted
+        refreshList();
+      })
+      .catch((err) => console.log(err));
   };
 
 
@@ -86,7 +90,8 @@ function Flash() {
           <button onClick={handleShowAnswer}>Show Answer</button>
           <button onClick={handleNextCard}>Next Card</button>
           <button onClick={addCard}>Add Card</button>
-          <button onClick={handleDelete}>Delete Card</button>
+          <button onClick={() => handleDelete(flashcards[currentCardIndex]?.id)}>Delete Card</button>
+
         </div>
       </div>
     </>
